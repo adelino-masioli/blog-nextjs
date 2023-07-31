@@ -1,7 +1,24 @@
+import { siteConfig } from '@/config';
+import { PostService } from '@/services/PostService';
+
+import { Grid } from '@/components/Grid';
+import { PostCard } from '@/components/PostCard';
+import { Profile } from '@/components/Profile';
+
 export default function Home() {
+  const { posts } = PostService.getAll();
+
   return (
-    <main className='flex flex-col items-center justify-between min-h-screen p-24'>
-      <h2>Hello</h2>
+    <main>
+      <div className="my-10">
+        <Profile items={siteConfig} />
+      </div>
+
+      <Grid gap={8} sm={1} md={2} lg={3}>
+        {posts.map((post) => (
+          <PostCard key={post._id} post={post} />
+        ))}
+      </Grid>
     </main>
   );
 }
