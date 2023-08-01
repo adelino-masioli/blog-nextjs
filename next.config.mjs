@@ -2,6 +2,7 @@ import withPlugins from 'next-compose-plugins';
 import { withContentlayer } from 'next-contentlayer';
 import withPWAInit from 'next-pwa';
 
+// eslint-disable-next-line no-undef
 const isDev = process.env.NODE_ENV !== 'production';
 
 const withPWA = withPWAInit({
@@ -22,12 +23,12 @@ const withPWA = withPWAInit({
   ]
 });
 
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
-  experimental: {
-    swcMinify: true
-  }
+  swcMinify: true
 };
 
 export default withPlugins([withPWA, withContentlayer], nextConfig);
+
