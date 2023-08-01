@@ -1,12 +1,22 @@
 import { allPosts } from 'contentlayer/generated';
 
-import { formatPosts } from '@/functions';
+import { formatPosts, paginationPosts } from '@/functions';
+
+type GetPostAllParams = {
+  limit?: number;
+  currentPage?: number;
+};
 
 export const PostService = {
-  getAll: () => {
+  getAll: ({ limit = 3, currentPage = 1 }: GetPostAllParams = {}) => {
     const formattedPosts = formatPosts(allPosts);
+    const numbPages = Math.ceil(formattedPosts.length / limit);
+    const paginatePosts = paginationPosts(formattedPosts, limit, currentPage);
+
     return {
-      posts: formattedPosts
+      posts: paginatePosts,
+      numbPages,
+      currentPage
     };
   },
 
