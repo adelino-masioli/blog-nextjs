@@ -15,7 +15,7 @@ type PostProps = {
 
 export const Post = ({ post }: PostProps) => {
   const { body, frontmatter, readingTime } = post;
-  const { title, description, date, tags, image } = frontmatter;
+  const { title, description, date, image } = frontmatter;
 
   const formattedDate = formatDate(date);
   return (

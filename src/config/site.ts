@@ -1,7 +1,7 @@
 import { Site } from '@/types';
 
 export const siteConfig: Site = {
-  name: 'Junior Alves',
+  name: 'Adelino Masioli',
   description: 'Blog onde falo sobre código e livros',
   title: 'Senior Software Engineer e content creator.',
   subtitle:
@@ -9,7 +9,7 @@ export const siteConfig: Site = {
   url: 'https://meusite.com.br',
   links: {
     youtube: 'https://www.youtube.com/@devjunioralves',
-    github: 'https://github.com/jjunior96',
-    linkedin: 'https://www.linkedin.com/in/junior-alves-b66a10127/'
+    github: 'https://github.com/adelino-masioli',
+    linkedin: 'https://www.linkedin.com/in/adelino-masioli/'
   }
 };

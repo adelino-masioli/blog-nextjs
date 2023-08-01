@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 import tw from 'tailwind-styled-components';
 
-export const LinkContainer = tw(Link)`
+export const LinkContainer = tw(Link)<{ $isMain: boolean }>`
   hover:border-link
   w-full
   rounded-lg
