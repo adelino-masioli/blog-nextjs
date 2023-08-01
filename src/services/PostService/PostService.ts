@@ -8,7 +8,7 @@ type GetPostAllParams = {
 };
 
 export const PostService = {
-  getAll: ({ limit = 3, currentPage = 1 }: GetPostAllParams = {}) => {
+  getAll: ({ limit = 10, currentPage = 1 }: GetPostAllParams = {}) => {
     const formattedPosts = formatPosts(allPosts);
     const numbPages = Math.ceil(formattedPosts.length / limit);
     const paginatePosts = paginationPosts(formattedPosts, limit, currentPage);
@@ -19,7 +19,6 @@ export const PostService = {
       currentPage
     };
   },
-
   getBySlug: (slug: string) => {
     const formattedPosts = formatPosts(allPosts);
     const post = formattedPosts.find((post) => post.slug === slug);
